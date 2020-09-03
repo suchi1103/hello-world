@@ -1,0 +1,858 @@
+Questions 1
+List and its default functions.
+
+
+
+The most basic data structure in Python is the sequence. Each element of a sequence is assigned a number - its position or index. The first index is zero, the second index is one, and so forth.
+​
+Python has six built-in types of sequences, but the most common ones are lists and tuples, which we would see in this tutorial.
+​
+There are certain things you can do with all the sequence types. These operations include indexing, slicing, adding, multiplying, and checking for membership. In addition, Python has built-in functions for finding the length of a sequence and for finding its largest and smallest elements.
+Python Lists:
+The list is the most versatile datatype available in Python, which can be written as a list of comma-separated values (items) between square brackets. Important thing about a list is that the items in a list need not be of the same type.
+​
+Creating a list is as simple as putting different comma-separated values between square brackets. 
+​
+For example −
+list1 = ['physics', 'chemistry', 1997, 2000];
+list2 = [1, 2, 3, 4, 5 ];
+list3 = ["a", "b", "c", "d"];
+​
+Similar to string indices, list indices start at 0, and lists can be sliced, concatenated and so on.
+​
+Accessing Values in Lists:
+To access values in lists, use the square brackets for slicing along with the index or indices to obtain value available at that index. 
+​
+For example −
+Live Demo
+#!/usr/bin/python3
+​
+list1 = ['physics', 'chemistry', 1997, 2000]
+list2 = [1, 2, 3, 4, 5, 6, 7 ]
+​
+print ("list1[0]: ", list1[0])
+print ("list2[1:5]: ", list2[1:5])
+When the above code is executed, it produces the following 
+​
+result −
+list1[0]:  physics
+list2[1:5]:  [2, 3, 4, 5]
+​
+Updating Lists:
+You can update single or multiple elements of lists by giving the slice on the left-hand side of the assignment operator, and you can add to elements in a list with the append() method. 
+​
+For example −
+Live Demo
+#!/usr/bin/python3
+​
+list = ['physics', 'chemistry', 1997, 2000]
+print ("Value available at index 2 : ", list[2])
+​
+list[2] = 2001
+print ("New value available at index 2 : ", list[2])
+Note − The append() method is discussed in the subsequent section.
+​
+When the above code is executed, it produces the following 
+​
+result −
+Value available at index 2 :  1997
+New value available at index 2 :  2001
+​
+Delete List Elements:
+To remove a list element, you can use either the del statement if you know exactly which element(s) you are deleting. You can use the remove() method if you do not know exactly which items to delete. 
+​
+For example −
+Live Demo
+#!/usr/bin/python3
+​
+list = ['physics', 'chemistry', 1997, 2000]
+print (list)
+​
+del list[2]
+print ("After deleting value at index 2 : ", list)
+When the above code is executed, it produces the following 
+​
+result −
+['physics', 'chemistry', 1997, 2000]
+After deleting value at index 2 :  ['physics', 'chemistry', 2000]
+Note − remove() method is discussed in subsequent section.
+​
+Basic List Operations:
+Lists respond to the + and * operators much like strings; they mean concatenation and repetition here too, except that the result is a new list, not a string.
+​
+In fact, lists respond to all of the general sequence operations we used on strings in the prior chapter.
+​
+Python Expression   Results Description
+len([1, 2, 3])  3   Length
+[1, 2, 3] + [4, 5, 6]   [1, 2, 3, 4, 5, 6]  Concatenation
+['Hi!'] * 4 ['Hi!', 'Hi!', 'Hi!', 'Hi!']    Repetition
+3 in [1, 2, 3]  True    Membership
+for x in [1,2,3] : print (x,end = ' ')  1 2 3   Iteration
+Indexing, Slicing and Matrixes
+Since lists are sequences, indexing and slicing work the same way for lists as they do for strings.
+​
+Assuming the following input −
+​
+L = ['C++'', 'Java', 'Python']
+Python Expression   Results Description
+L[2]    'Python'    Offsets start at zero
+L[-2]   'Java'  Negative: count from the right
+L[1:]   ['Java', 'Python']  Slicing fetches sections
+Built-in List Functions and Methods
+Python includes the following list functions −
+​
+Sr.No.  Function & Description
+1   len(list)
+Gives the total length of the list.
+​
+2   max(list)
+Returns item from the list with max value.
+​
+3   min(list)
+Returns item from the list with min value.
+​
+4   list(seq)
+Converts a tuple into list.
+​
+Python includes the following list methods −
+​
+Sr.No.  Methods & Description
+1   list.append(obj)
+Appends object obj to list
+​
+2   list.count(obj)
+Returns count of how many times obj occurs in list
+​
+3   list.extend(seq)
+Appends the contents of seq to list
+​
+4   list.index(obj)
+Returns the lowest index in list that obj appears
+​
+5   list.insert(index, obj)
+Inserts object obj into list at offset index
+​
+6   list.pop(obj = list[-1])
+Removes and returns last object or obj from list
+​
+7   list.remove(obj)
+Removes object obj from list
+​
+8   list.reverse()
+Reverses objects of list in place
+​
+9   list.sort([func])
+Sorts objects of list, use compare func if given.
+​
+​
+​
+​
+
+
+Questions 2
+Dictionary and its default functions.
+
+
+
+Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.
+​
+Keys are unique within a dictionary while values may not be. The values of a dictionary can be of any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.
+​
+Accessing Values in Dictionary:
+To access dictionary elements, you can use the familiar square brackets along with the key to obtain its value. Following is a 
+​
+simple example −
+Live Demo
+#!/usr/bin/python3
+​
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+print ("dict['Name']: ", dict['Name'])
+print ("dict['Age']: ", dict['Age'])
+When the above code is executed, it produces the following 
+​
+result −
+dict['Name']:  Zara
+dict['Age']:  7
+If we attempt to access a data item with a key, which is not a part of the dictionary, we get an error as follows −
+​
+Live Demo
+#!/usr/bin/python3
+​
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'};
+print ("dict['Alice']: ", dict['Alice'])
+When the above code is executed, it produces the following result −
+​
+dict['Zara']:
+Traceback (most recent call last):
+   File "test.py", line 4, in <module>
+      print "dict['Alice']: ", dict['Alice'];
+KeyError: 'Alice'
+Updating Dictionary
+You can update a dictionary by adding a new entry or a key-value pair, modifying an existing entry, or deleting an existing entry as shown in a simple example given below.
+​
+Live Demo
+#!/usr/bin/python3
+​
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+dict['Age'] = 8; # update existing entry
+dict['School'] = "DPS School" # Add new entry
+​
+print ("dict['Age']: ", dict['Age'])
+print ("dict['School']: ", dict['School'])
+When the above code is executed, it produces the following result −
+​
+dict['Age']:  8
+dict['School']:  DPS School
+Delete Dictionary Elements
+You can either remove individual dictionary elements or clear the entire contents of a dictionary. You can also delete entire dictionary in a single operation.
+​
+To explicitly remove an entire dictionary, just use the del statement. Following is a simple example −
+​
+Live Demo
+#!/usr/bin/python3
+​
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+​
+del dict['Name'] # remove entry with key 'Name'
+dict.clear()     # remove all entries in dict
+del dict         # delete entire dictionary
+​
+print ("dict['Age']: ", dict['Age'])
+print ("dict['School']: ", dict['School'])
+This produces the following result.
+​
+An exception is raised because after del dict, the dictionary does not exist anymore.
+​
+dict['Age']:
+Traceback (most recent call last):
+   File "test.py", line 8, in <module>
+      print "dict['Age']: ", dict['Age'];
+TypeError: 'type' object is unsubscriptable
+Note − The del() method is discussed in subsequent section.
+​
+Properties of Dictionary Keys:
+Dictionary values have no restrictions. They can be any arbitrary Python object, either standard objects or user-defined objects. However, same is not true for the keys.
+​
+There are two important points to remember about dictionary keys −
+​
+(a) More than one entry per key is not allowed. This means no duplicate key is allowed. When duplicate keys are encountered during assignment, the last assignment wins. 
+​
+For example −
+Live Demo
+#!/usr/bin/python3
+​
+dict = {'Name': 'Zara', 'Age': 7, 'Name': 'Manni'}
+print ("dict['Name']: ", dict['Name'])
+When the above code is executed, it produces the following result −
+​
+dict['Name']:  Manni
+(b) Keys must be immutable. This means you can use strings, numbers or tuples as dictionary keys but something like ['key'] is not allowed. Following is a 
+​
+simple example −
+Live Demo
+#!/usr/bin/python3
+​
+dict = {['Name']: 'Zara', 'Age': 7}
+print ("dict['Name']: ", dict['Name'])
+When the above code is executed, it produces the following result −
+​
+Traceback (most recent call last):
+   File "test.py", line 3, in <module>
+      dict = {['Name']: 'Zara', 'Age': 7}
+TypeError: list objects are unhashable
+​
+Built-in Dictionary Functions and Methods:
+Python includes the following dictionary functions −
+​
+Sr.No.  Function & Description
+1   cmp(dict1, dict2)
+No longer available in Python 3.
+​
+2   len(dict)
+Gives the total length of the dictionary. This would be equal to the number of items in the dictionary.
+​
+3   str(dict)
+Produces a printable string representation of a dictionary
+​
+4   type(variable)
+Returns the type of the passed variable. If passed variable is dictionary, then it would return a dictionary type.
+​
+Python includes the following dictionary methods −
+​
+Sr.No.  Method & Description
+1   dict.clear()
+Removes all elements of dictionary dict
+​
+2   dict.copy()
+Returns a shallow copy of dictionary dict
+​
+3   dict.fromkeys()
+Create a new dictionary with keys from seq and values set to value.
+​
+4   dict.get(key, default=None)
+For key key, returns value or default if key not in dictionary
+​
+5   dict.has_key(key)
+Removed, use the in operation instead.
+​
+6   dict.items()
+Returns a list of dict's (key, value) tuple pairs
+​
+7   dict.keys()
+Returns list of dictionary dict's keys
+​
+8   dict.setdefault(key, default = None)
+Similar to get(), but will set dict[key] = default if key is not already in dict
+​
+9   dict.update(dict2)
+Adds dictionary dict2's key-values pairs to dict
+​
+10  dict.values()
+Returns list of dictionary dict's values
+
+
+Questions 3
+Sets and its default functions.
+
+
+
+Mathematically a set is a collection of items not in any particular order. A Python set is similar to this mathematical definition with below additional conditions.
+​
+The elements in the set cannot be duplicates.
+The elements in the set are immutable(cannot be modified) but the set as a whole is mutable.
+There is no index attached to any element in a python set. So they do not support any indexing or slicing operation.
+Set Operations
+The sets in python are typically used for mathematical operations like union, intersection, difference and complement etc. We can create a set, access it’s elements and carry out these mathematical operations as shown below.
+​
+Creating a set:
+A set is created by using the set() function or placing all the elements within a pair of curly braces.
+​
+ 
+Days=set(["Mon","Tue","Wed","Thu","Fri","Sat","Sun"])
+Months={"Jan","Feb","Mar"}
+Dates={21,22,17}
+print(Days)
+print(Months)
+print(Dates)
+ 
+When the above code is executed, it produces the following result. Please note how the order of the elements has changed in the result.
+​
+ 
+set(['Wed', 'Sun', 'Fri', 'Tue', 'Mon', 'Thu', 'Sat'])
+set(['Jan', 'Mar', 'Feb'])
+set([17, 21, 22])
+ 
+Accessing Values in a Set:
+We cannot access individual values in a set. We can only access all the elements together as shown above. But we can also get a list of individual elements by looping through the set.
+​
+ 
+Days=set(["Mon","Tue","Wed","Thu","Fri","Sat","Sun"])
+ 
+for d in Days:
+    print(d)
+When the above code is executed, it produces the following result.
+​
+Wed
+Sun
+Fri
+Tue
+Mon
+Thu
+Sat
+​
+Adding Items to a Set:
+We can add elements to a set by using add() method. Again as discussed there is no specific index attached to the newly added element.
+​
+ 
+Days=set(["Mon","Tue","Wed","Thu","Fri","Sat"])
+ 
+Days.add("Sun")
+print(Days)
+When the above code is executed, it produces the following result.
+​
+set(['Wed', 'Sun', 'Fri', 'Tue', 'Mon', 'Thu', 'Sat'])
+Removing Item from a Set
+We can remove elements from a set by using discard() method. Again as discussed there is no specific index attached to the newly added element.
+​
+ 
+Days=set(["Mon","Tue","Wed","Thu","Fri","Sat"])
+ 
+Days.discard("Sun")
+print(Days)
+When the above code is executed, it produces the following result.
+​
+set(['Wed', 'Fri', 'Tue', 'Mon', 'Thu', 'Sat'])
+​
+Union of Sets:
+The union operation on two sets produces a new set containing all the distinct elements from both the sets. In the below example the element “Wed” is present in both the sets.
+​
+ 
+DaysA = set(["Mon","Tue","Wed"])
+DaysB = set(["Wed","Thu","Fri","Sat","Sun"])
+AllDays = DaysA|DaysB
+print(AllDays)
+When the above code is executed, it produces the following result. Please note the result has only one “wed”.
+​
+set(['Wed', 'Fri', 'Tue', 'Mon', 'Thu', 'Sat'])
+​
+Intersection of Sets:
+The intersection operation on two sets produces a new set containing only the common elements from both the sets. In the below example the element “Wed” is present in both the sets.
+​
+ 
+DaysA = set(["Mon","Tue","Wed"])
+DaysB = set(["Wed","Thu","Fri","Sat","Sun"])
+AllDays = DaysA & DaysB
+print(AllDays)
+When the above code is executed, it produces the following result. Please note the result has only one “wed”.
+​
+set(['Wed'])
+ 
+Difference of Sets:
+The difference operation on two sets produces a new set containing only the elements from the first set and none from the second set. In the below example the element “Wed” is present in both the sets so it will not be found in the result set.
+​
+ 
+DaysA = set(["Mon","Tue","Wed"])
+DaysB = set(["Wed","Thu","Fri","Sat","Sun"])
+AllDays = DaysA - DaysB
+print(AllDays)
+When the above code is executed, it produces the following result. Please note the result has only one “wed”.
+​
+set(['Mon', 'Tue'])
+​
+Compare Sets:
+We can check if a given set is a subset or superset of another set. The result is True or False depending on the elements present in the sets.
+​
+​
+DaysA = set(["Mon","Tue","Wed"])
+DaysB = set(["Mon","Tue","Wed","Thu","Fri","Sat","Sun"])
+SubsetRes = DaysA <= DaysB
+SupersetRes = DaysB >= DaysA
+print(SubsetRes)
+print(SupersetRes)
+When the above code is executed, it produces the following result.
+​
+True
+True
+
+
+Questions 4
+Tuple and explore default methods.
+
+
+
+A tuple is a collection of objects which ordered and immutable. Tuples are sequences, just like lists. The main difference between the tuples and the lists is that the tuples cannot be changed unlike lists. Tuples use parentheses, whereas lists use square brackets.
+​
+Creating a tuple is as simple as putting different comma-separated values. Optionally, you can put these comma-separated values between parentheses also. 
+​
+For example −
+tup1 = ('physics', 'chemistry', 1997, 2000)
+tup2 = (1, 2, 3, 4, 5 )
+tup3 = "a", "b", "c", "d"
+The empty tuple is written as two parentheses containing nothing −
+​
+tup1 = ();
+To write a tuple containing a single value you have to include a comma, even though there is only one value −
+​
+tup1 = (50,)
+Like string indices, tuple indices start at 0, and they can be sliced, concatenated, and so on.
+​
+Accessing Values in Tuples:
+To access values in tuple, use the square brackets for slicing along with the index or indices to obtain the value available at that index. 
+​
+For example −
+Live Demo
+#!/usr/bin/python3
+​
+tup1 = ('physics', 'chemistry', 1997, 2000)
+tup2 = (1, 2, 3, 4, 5, 6, 7 )
+​
+print ("tup1[0]: ", tup1[0])
+print ("tup2[1:5]: ", tup2[1:5])
+When the above code is executed, it produces the following result −
+​
+tup1[0]:  physics
+tup2[1:5]:  (2, 3, 4, 5)
+​
+Updating Tuples:
+Tuples are immutable, which means you cannot update or change the values of tuple elements. You are able to take portions of the existing tuples to create new tuples as the following 
+​
+example demonstrates −
+Live Demo
+#!/usr/bin/python3
+​
+tup1 = (12, 34.56)
+tup2 = ('abc', 'xyz')
+​
+# Following action is not valid for tuples
+# tup1[0] = 100;
+​
+# So let's create a new tuple as follows
+tup3 = tup1 + tup2
+print (tup3)
+When the above code is executed, it produces the following 
+​
+result −
+(12, 34.56, 'abc', 'xyz')
+​
+Delete Tuple Elements:
+Removing individual tuple elements is not possible. There is, of course, nothing wrong with putting together another tuple with the undesired elements discarded.
+​
+To explicitly remove an entire tuple, just use the del statement. 
+​
+For example −
+#!/usr/bin/python3
+​
+tup = ('physics', 'chemistry', 1997, 2000);
+​
+print (tup)
+del tup;
+print ("After deleting tup : ")
+print (tup)
+This produces the following result.
+​
+Note − An exception is raised. This is because after del tup, tuple does not exist any more.
+​
+('physics', 'chemistry', 1997, 2000)
+After deleting tup :
+Traceback (most recent call last):
+   File "test.py", line 9, in <module>
+      print tup;
+NameError: name 'tup' is not defined
+​
+Basic Tuples Operations:
+Tuples respond to the + and * operators much like strings; they mean concatenation and repetition here too, except that the result is a new tuple, not a string.
+​
+In fact, tuples respond to all of the general sequence operations we used on strings in the previous chapter.
+​
+Python Expression   Results Description
+len((1, 2, 3))  3   Length
+(1, 2, 3) + (4, 5, 6)   (1, 2, 3, 4, 5, 6)  Concatenation
+('Hi!',) * 4    ('Hi!', 'Hi!', 'Hi!', 'Hi!')    Repetition
+3 in (1, 2, 3)  True    Membership
+for x in (1,2,3) : print (x, end = ' ') 1 2 3   Iteration
+Indexing, Slicing, and Matrixes
+Since tuples are sequences, indexing and slicing work the same way for tuples as they do for strings, assuming the following input −
+​
+T=('C++', 'Java', 'Python')
+Python Expression   Results Description
+T[2]    'Python'    Offsets start at zero
+T[-2]   'Java'  Negative: count from the right
+T[1:]   ('Java', 'Python')  Slicing fetches sections
+No Enclosing Delimiters
+No enclosing Delimiters is any set of multiple objects, comma-separated, written without identifying symbols, i.e., brackets for lists, parentheses for tuples, etc., default to tuples, as indicated in these short examples.
+​
+Built-in Tuple Functions
+Python includes the following tuple functions −
+​
+Sr.No.  Function & Description
+1   cmp(tuple1, tuple2)
+Compares elements of both tuples.
+​
+2   len(tuple)
+Gives the total length of the tuple.
+​
+3   max(tuple)
+Returns item from the tuple with max value.
+​
+4   min(tuple)
+Returns item from the tuple with min value.
+​
+5   tuple(seq)
+Converts a list into tuple.
+
+
+Questions 5
+Strings and explore default methods.
+
+
+
+Strings are amongst the most popular types in Python. We can create them simply by enclosing characters in quotes. Python treats single quotes the same as double quotes. Creating strings is as simple as assigning a value to a variable. 
+​
+For example −
+var1 = 'Hello World!'
+var2 = "Python Programming"
+​
+Accessing Values in Strings:
+Python does not support a character type; these are treated as strings of length one, thus also considered a substring.
+​
+To access substrings, use the square brackets for slicing along with the index or indices to obtain your substring. 
+​
+For example −
+Live Demo
+#!/usr/bin/python
+​
+var1 = 'Hello World!'
+var2 = "Python Programming"
+​
+print "var1[0]: ", var1[0]
+print "var2[1:5]: ", var2[1:5]
+When the above code is executed, it produces the following
+​
+​
+result −
+var1[0]:  H
+var2[1:5]:  ytho
+Updating Strings
+You can "update" an existing string by (re)assigning a variable to another string. The new value can be related to its previous value or to a completely different string altogether. 
+​
+For example −
+Live Demo
+#!/usr/bin/python
+​
+var1 = 'Hello World!'
+print "Updated String :- ", var1[:6] + 'Python'
+When the above code is executed, it produces the following 
+​
+result −
+Updated String :-  Hello Python
+Escape Characters
+Following table is a list of escape or non-printable characters that can be represented with backslash notation.
+​
+An escape character gets interpreted; in a single quoted as well as double quoted strings.
+​
+Backslash notation  Hexadecimal character   Description
+\a  0x07    Bell or alert
+\b  0x08    Backspace
+\cx     Control-x
+\C-x        Control-x
+\e  0x1b    Escape
+\f  0x0c    Formfeed
+\M-\C-x     Meta-Control-x
+\n  0x0a    Newline
+\nnn        Octal notation, where n is in the range 0.7
+\r  0x0d    Carriage return
+\s  0x20    Space
+\t  0x09    Tab
+\v  0x0b    Vertical tab
+\x      Character x
+\xnn        Hexadecimal notation, where n is in the range 0.9, a.f, or A.F
+String Special Operators
+Assume string variable a holds 'Hello' and variable b holds 'Python', then −
+​
+Operator    Description Example
++   Concatenation - Adds values on either side of the operator  a + b will give HelloPython
+*   Repetition - Creates new strings, concatenating multiple copies of the same string  a*2 will give -HelloHello
+[]  Slice - Gives the character from the given index    a[1] will give e
+[ : ]   Range Slice - Gives the characters from the given range a[1:4] will give ell
+in  Membership - Returns true if a character exists in the given string H in a will give 1
+not in  Membership - Returns true if a character does not exist in the given string M not in a will give 1
+r/R Raw String - Suppresses actual meaning of Escape characters. The syntax for raw strings is exactly the same as for normal strings with the exception of the raw string operator, the letter "r," which precedes the quotation marks. The "r" can be lowercase (r) or uppercase (R) and must be placed immediately preceding the first quote mark.   print r'\n' prints \n and print R'\n'prints \n
+%   Format - Performs String formatting See at next section
+String Formatting Operator
+One of Python's coolest features is the string format operator %. This operator is unique to strings and makes up for the pack of having functions from C's printf() family. Following is a 
+​
+simple example −
+Live Demo
+#!/usr/bin/python
+​
+print "My name is %s and weight is %d kg!" % ('Zara', 21)
+When the above code is executed, it produces the following 
+​
+result −
+My name is Zara and weight is 21 kg!
+Here is the list of complete set of symbols which can be used along with % −
+​
+Format Symbol   Conversion
+%c  character
+%s  string conversion via str() prior to formatting
+%i  signed decimal integer
+%d  signed decimal integer
+%u  unsigned decimal integer
+%o  octal integer
+%x  hexadecimal integer (lowercase letters)
+%X  hexadecimal integer (UPPERcase letters)
+%e  exponential notation (with lowercase 'e')
+%E  exponential notation (with UPPERcase 'E')
+%f  floating point real number
+%g  the shorter of %f and %e
+%G  the shorter of %f and %E
+Other supported symbols and functionality are listed in the following table −
+​
+Symbol  Functionality
+*   argument specifies width or precision
+-   left justification
++   display the sign
+<sp>    leave a blank space before a positive number
+#   add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.
+0   pad from left with zeros (instead of spaces)
+%   '%%' leaves you with a single literal '%'
+(var)   mapping variable (dictionary arguments)
+m.n.    m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)
+Triple Quotes
+Python's triple quotes comes to the rescue by allowing strings to span multiple lines, including verbatim NEWLINEs, TABs, and any other special characters.
+​
+The syntax for triple quotes consists of three consecutive single or double quotes.
+​
+Live Demo
+#!/usr/bin/python
+​
+para_str = """this is a long string that is made up of
+several lines and non-printable characters such as
+TAB ( \t ) and they will show up that way when displayed.
+NEWLINEs within the string, whether explicitly given like
+this within the brackets [ \n ], or just a NEWLINE within
+the variable assignment will also show up.
+"""
+print para_str
+When the above code is executed, it produces the following result. Note how every single special character has been converted to its printed form, right down to the last NEWLINE at the end of the string between the "up." and closing triple quotes. Also note that NEWLINEs occur either with an explicit carriage return at the end of a line or its escape code (\n) −
+​
+this is a long string that is made up of
+several lines and non-printable characters such as
+TAB (    ) and they will show up that way when displayed.
+NEWLINEs within the string, whether explicitly given like
+this within the brackets [
+ ], or just a NEWLINE within
+the variable assignment will also show up.
+Raw strings do not treat the backslash as a special character at all. Every character you put into a raw string stays the way you wrote it −
+​
+Live Demo
+#!/usr/bin/python
+​
+print 'C:\\nowhere'
+When the above code is executed, it produces the following result −
+​
+C:\nowhere
+Now let's make use of raw string. We would put expression in r'expression' as follows −
+​
+Live Demo
+#!/usr/bin/python
+​
+print r'C:\\nowhere'
+When the above code is executed, it produces the following result −
+​
+C:\\nowhere
+Unicode String
+Normal strings in Python are stored internally as 8-bit ASCII, while Unicode strings are stored as 16-bit Unicode. This allows for a more varied set of characters, including special characters from most languages in the world. I'll restrict my treatment of Unicode strings to the following −
+​
+Live Demo
+#!/usr/bin/python
+​
+print u'Hello, world!'
+When the above code is executed, it produces the following result −
+​
+Hello, world!
+As you can see, Unicode strings use the prefix u, just as raw strings use the prefix r.
+​
+Built-in String Methods
+Python includes the following built-in methods to manipulate strings −
+​
+Sr.No.  Methods with Description
+1   capitalize()
+Capitalizes first letter of string
+​
+2   center(width, fillchar)
+Returns a space-padded string with the original string centered to a total of width columns.
+​
+3   count(str, beg= 0,end=len(string))
+Counts how many times str occurs in string or in a substring of string if starting index beg and ending index end are given.
+​
+4   decode(encoding='UTF-8',errors='strict')
+Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding.
+​
+5   encode(encoding='UTF-8',errors='strict')
+Returns encoded string version of string; on error, default is to raise a ValueError unless errors is given with 'ignore' or 'replace'.
+​
+6   endswith(suffix, beg=0, end=len(string))
+Determines if string or a substring of string (if starting index beg and ending index end are given) ends with suffix; returns true if so and false otherwise.
+​
+7   expandtabs(tabsize=8)
+Expands tabs in string to multiple spaces; defaults to 8 spaces per tab if tabsize not provided.
+​
+8   find(str, beg=0 end=len(string))
+Determine if str occurs in string or in a substring of string if starting index beg and ending index end are given returns index if found and -1 otherwise.
+​
+9   index(str, beg=0, end=len(string))
+Same as find(), but raises an exception if str not found.
+​
+10  isalnum()
+Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.
+​
+11  isalpha()
+Returns true if string has at least 1 character and all characters are alphabetic and false otherwise.
+​
+12  isdigit()
+Returns true if string contains only digits and false otherwise.
+​
+13  islower()
+Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.
+​
+14  isnumeric()
+Returns true if a unicode string contains only numeric characters and false otherwise.
+​
+15  isspace()
+Returns true if string contains only whitespace characters and false otherwise.
+​
+16  istitle()
+Returns true if string is properly "titlecased" and false otherwise.
+​
+17  isupper()
+Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.
+​
+18  join(seq)
+Merges (concatenates) the string representations of elements in sequence seq into a string, with separator string.
+​
+19  len(string)
+Returns the length of the string
+​
+20  ljust(width[, fillchar])
+Returns a space-padded string with the original string left-justified to a total of width columns.
+​
+21  lower()
+Converts all uppercase letters in string to lowercase.
+​
+22  lstrip()
+Removes all leading whitespace in string.
+​
+23  maketrans()
+Returns a translation table to be used in translate function.
+​
+24  max(str)
+Returns the max alphabetical character from the string str.
+​
+25  min(str)
+Returns the min alphabetical character from the string str.
+​
+26  replace(old, new [, max])
+Replaces all occurrences of old in string with new or at most max occurrences if max given.
+​
+27  rfind(str, beg=0,end=len(string))
+Same as find(), but search backwards in string.
+​
+28  rindex( str, beg=0, end=len(string))
+Same as index(), but search backwards in string.
+​
+29  rjust(width,[, fillchar])
+Returns a space-padded string with the original string right-justified to a total of width columns.
+​
+30  rstrip()
+Removes all trailing whitespace of string.
+​
+31  split(str="", num=string.count(str))
+Splits string according to delimiter str (space if not provided) and returns list of substrings; split into at most num substrings if given.
+​
+32  splitlines( num=string.count('\n'))
+Splits string at all (or num) NEWLINEs and returns a list of each line with NEWLINEs removed.
+​
+33  startswith(str, beg=0,end=len(string))
+Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.
+​
+34  strip([chars])
+Performs both lstrip() and rstrip() on string.
+​
+35  swapcase()
+Inverts case for all letters in string.
+​
+36  title()
+Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.
+​
+37  translate(table, deletechars="")
+Translates string according to translation table str(256 chars), removing those in the del string.
+​
+38  upper()
+Converts lowercase letters in string to uppercase.
+​
+39  zfill (width)
+Returns original string leftpadded with zeros to a total of width characters; intended for numbers, zfill() retains any sign given (less one zero).
+​
+40  isdecimal()
+Returns true if a unicode string contains only decimal characters and false otherwise.
